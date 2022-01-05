@@ -15,6 +15,7 @@ pipeline{
 
              steps{
                  echo 'application is testing.....'
+                 echo 'test 1 executing'
              }
          }
 
