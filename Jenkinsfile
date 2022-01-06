@@ -18,7 +18,9 @@ pipeline{
          stage("build"){
 
              steps{
-                
+                 nodejs('NodeJS-17.3.0'){
+                     sh 'mbt build -t ./'
+                 }
                  echo 'application is building.....'
              }
          }
