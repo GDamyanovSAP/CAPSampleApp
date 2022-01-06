@@ -12,6 +12,7 @@ pipeline{
                         sh 'npm install'
                         sh 'npm install --global mbt'
                         sh 'mbt --version'
+                        sh 'make --version'
                     }
                 }
          }   
