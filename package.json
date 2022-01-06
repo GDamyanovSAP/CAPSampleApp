@@ -7,7 +7,9 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^5",
-    "express": "^4"
+    "express": "^4",
+    "hdb": "^0.18.3",
+    "mbt": "^1.2.7"
   },
   "devDependencies": {
     "chai": "^4.3.4",
@@ -18,7 +20,6 @@
   "scripts": {
     "test": "mocha tests/test.js --timeout 15000 --exit",
     "start": "npx cds run"
-    
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
@@ -43,6 +44,16 @@
     "rules": {
       "no-console": "off",
       "require-atomic-updates": "off"
+    }
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sql"
+      }
+    },
+    "hana": {
+      "deploy-format": "hdbtable"
     }
   }
 }
