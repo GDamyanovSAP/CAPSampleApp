@@ -8,6 +8,7 @@ pipeline{
     stages{
         stage('dependencies'){
                 steps{
+                    echo 'installing dependencies'
                     nodejs('NodeJS-17.3.0'){
                         sh 'npm install'
                         sh 'npm install --global mbt'
@@ -18,10 +19,12 @@ pipeline{
          stage("build"){
 
              steps{
+
+                 echo 'application is building.....'
                  nodejs('NodeJS-17.3.0'){
                      sh 'mbt build -t ./'
                  }
-                 echo 'application is building.....'
+                 
              }
          }
 
