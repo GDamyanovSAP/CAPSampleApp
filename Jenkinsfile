@@ -5,11 +5,18 @@ pipeline{
          SERVER_CREDENTIALS = credentials('cockpit-credentials')
      }
 
-     stages{
-
+    stages{
+        stage('dependencies'){
+                steps{
+                    nodejs('NodeJS-17.3.0'){
+                        sh 'npm install'
+                    }
+                }
+         }   
          stage("build"){
 
              steps{
+                
                  echo 'application is building.....'
              }
          }
@@ -24,13 +31,16 @@ pipeline{
              }
              steps{
                  echo "application is testing..... branch: ${env.BRANCH_NAME}"
+                 nodejs('NodeJS-17.3.0'){
+                        sh 'npm run test'
+                    }
              }
          }
 
          stage("deploy"){
 
-             steps{
-                 //echo "deploying with credentials: ${SERVER_CREDENTIALS}"
+             steps{ 
+                 echo "deploying with credentials: ${SERVER_CREDENTIALS}"
                  echo 'application is deploying.....'
                  withCredentials(
                      [
