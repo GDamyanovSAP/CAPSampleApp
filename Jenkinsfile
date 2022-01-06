@@ -10,6 +10,7 @@ pipeline{
                 steps{
                     nodejs('NodeJS-17.3.0'){
                         sh 'npm install'
+                        sh 'mbt --version'
                     }
                 }
          }   
