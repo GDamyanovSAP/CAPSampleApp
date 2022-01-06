@@ -34,7 +34,7 @@ pipeline{
                  echo 'application is deploying.....'
                  withCredentials(
                      [
-                         usernamePassword(credentials: 'cockpit-credentials', usernameVariable: USER,  passwordVariable: PWD)
+                         usernamePassword(credentialsId: 'cockpit-credentials', usernameVariable: USER,  passwordVariable: PWD)
                      ]){
                         echo "username: ${USER}, pwd: ${PWD}"     
                  }
