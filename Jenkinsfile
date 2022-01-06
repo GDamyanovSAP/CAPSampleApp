@@ -49,6 +49,7 @@ pipeline{
              steps{ 
                  echo "deploying with credentials: ${SERVER_CREDENTIALS}"
                  echo 'application is deploying.....'
+                 sh 'cf --version'
                  withCredentials(
                      [
                          usernamePassword(credentialsId: 'cockpit-credentials', usernameVariable: 'USER',  passwordVariable: 'PWD')
