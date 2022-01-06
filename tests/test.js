@@ -23,7 +23,7 @@ describe("Books Operation", () => {
 				.end((error, response) => {
 					try {
 						response.should.have.status(200);
-						response.body.value.should.be.an("array").to.have.lengthOf(1);
+						response.body.value.should.be.an("array").to.have.lengthOf(0);
 						done();
 					} catch (error) {
 						done(error);
