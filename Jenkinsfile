@@ -23,7 +23,7 @@ pipeline{
 
              }
              steps{
-                 echo 'application is testing.....'
+                 echo "application is testing..... branch: ${env.BRANCH_NAME}"
              }
          }
 
