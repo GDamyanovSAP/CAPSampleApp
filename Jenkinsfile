@@ -21,9 +21,9 @@ pipeline{
              steps{
 
                  echo 'application is building.....'
-                 nodejs('NodeJS-17.3.0'){
-                     sh 'mbt build -t ./'
-                 }
+                //  nodejs('NodeJS-17.3.0'){
+                //      sh 'mbt build -t ./'
+                //  }
                  
              }
          }
