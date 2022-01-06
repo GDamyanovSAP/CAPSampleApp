@@ -4,7 +4,7 @@ pipeline{
      environment{
          SERVER_CREDENTIALS = credentials('cockpit-credentials')
      }
-     
+
      stages{
 
          stage("build"){
@@ -30,7 +30,7 @@ pipeline{
          stage("deploy"){
 
              steps{
-                 echo "deploying with credentials: ${SERVER_CREDENTIALS}"
+                 //echo "deploying with credentials: ${SERVER_CREDENTIALS}"
                  echo 'application is deploying.....'
                  withCredentials(
                      [
