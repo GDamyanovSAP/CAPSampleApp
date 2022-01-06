@@ -1,6 +1,6 @@
 pipeline{
      
-     agent  { docker 'gcc:latest' }
+     agent any
      environment{
          SERVER_CREDENTIALS = credentials('cockpit-credentials')
      }
@@ -12,7 +12,6 @@ pipeline{
                         sh 'npm install'
                         sh 'npm install --global mbt'
                         sh 'mbt --version'
-                        sh 'make --version'
                     }
                 }
          }   
