@@ -4,11 +4,7 @@ pipeline{
      environment{
          SERVER_CREDENTIALS = credentials('cockpit-credentials')
      }
-
-     tools{
-         
-     }
-
+     
      stages{
 
          stage("build"){
